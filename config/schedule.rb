@@ -1,15 +1,15 @@
 env :PATH, ENV['PATH']
+env :GEM_PATH, ENV['GEM_PATH']
 
 # every 1.day, at: '4:30 am' do
 #   runner "FeedbacksFetcherService.new(Feedback.all.pluck(:real_id)).fetch_new_feedbacks"
 # end
 
-set :output, "log/cron.log"
+set :output, 'log/cron.log'
+
+set :environment, "development"
 
 every 1.minute do
-  # p 'Whenever WORKED! (every 1.minute)'
-  # Rails.logger.info("Whenever WORKED! (every 1.minute)")
-  # runner "FeedbacksFetcherService.new(Feedback.all.pluck(:real_id)).fetch_new_feedbacks"
-  # runner 'FetchNewFeedbacksJob.perform'
+  runner "puts 'from schedule.rb!'"
   rake 'daily:fetch_feedbacks'
 end

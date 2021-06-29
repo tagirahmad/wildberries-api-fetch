@@ -12,10 +12,17 @@ class FeedbacksFetcherService
   DATA = { "skip": 0, "imtId": 19_400_834, "order": 'dateDesc' }.freeze
 
   def fetch_new_feedbacks
-    json_data = JSON.parse fetch
-    json_data['feedbacks'].select do |json_fb|
-      put_into_db(json_fb) unless @ids.include? json_fb['id']
-    end
+    # json_data = JSON.parse fetch
+    # json_data['feedbacks'].select do |json_fb|
+    #   put_into_db(json_fb) unless @ids.include? json_fb['id']
+    # end
+    f = Feedback.new(text: 'from cron',
+                      product_name: 'nil',
+                      real_id: 'nil',
+                      created_date: nil,
+                      updated_date: nil)
+
+      f.save!
   end
 
   private

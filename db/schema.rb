@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,31 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_630_191_719) do
+ActiveRecord::Schema.define(version: 2021_06_30_215324) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'comments', force: :cascade do |t|
-    t.string 'text'
-    t.bigint 'feedback_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'user_name'
-    t.string 'real_id'
-    t.date 'created_date'
-    t.index ['feedback_id'], name: 'index_comments_on_feedback_id'
+  create_table "comments", force: :cascade do |t|
+    t.string "text"
+    t.bigint "feedback_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "user_name"
+    t.string "real_id"
+    t.datetime "created_date"
+    t.index ["feedback_id"], name: "index_comments_on_feedback_id"
   end
 
-  create_table 'feedbacks', force: :cascade do |t|
-    t.string 'text'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'product_name'
-    t.string 'real_id'
-    t.datetime 'created_date'
-    t.datetime 'updated_date'
-    t.string 'user_name'
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "product_name"
+    t.string "real_id"
+    t.datetime "created_date"
+    t.datetime "updated_date"
+    t.string "user_name"
   end
 
-  add_foreign_key 'comments', 'feedbacks'
+  add_foreign_key "comments", "feedbacks"
 end

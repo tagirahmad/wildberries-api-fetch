@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :daily do
   desc 'Fetches tasks daily'
   task fetch_feedbacks: :environment do

@@ -1,24 +1,11 @@
-# README
+Service for collecting reviews of the product card on Wildberries.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://public-feedbacks.wildberries.ru/api/v1/feedbacks
 
-Things you may want to cover:
+The service launches daily and collect all new reviews of the card.
 
-* Ruby version
+API provides:
 
-* System dependencies
+- 10 most commented cards of the week
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Data so that you can build a graph of card activity (number of comments / day) for 30 days.

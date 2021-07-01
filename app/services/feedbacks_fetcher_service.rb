@@ -24,15 +24,6 @@ class FeedbacksFetcherService
     json_data[:feedbacks].pluck(:comments).flatten!.compact.select do |c|
       add_new_comment c
     end
-    # puts json_data.class
-    # byebug
-    # f = Feedback.new(text: 'from cron',
-    #                   product_name: 'nil',
-    #                   real_id: 'nil',
-    #                   created_date: nil,
-    #                   updated_date: nil)
-
-    #   f.save!
   end
 
   private
